@@ -1,7 +1,8 @@
 package com.josecalvo
 
-import com.josecalvo.com.musicapi.infraestructure.web.plugin.configureRouting
-import com.josecalvo.com.musicapi.infraestructure.web.plugin.configureSerialization
+import com.josecalvo.infrastructure.database.DatabaseFactory
+import com.josecalvo.infrastructure.web.plugin.configureRouting
+import com.josecalvo.infrastructure.web.plugin.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -12,6 +13,14 @@ fun main() {
 }
 
 fun Application.module() {
+    DatabaseFactory.init(
+        driver = "org.postgresql.Driver",
+        url = "jdbc:postgresql://localhost:5432/music-player_db",
+        user = "postgres",
+        password = "ajstyles2006",
+        maxPoolSize = 10
+    )
+
     configureSerialization()
     configureRouting()
 }

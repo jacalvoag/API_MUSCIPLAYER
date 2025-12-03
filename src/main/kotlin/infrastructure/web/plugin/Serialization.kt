@@ -1,4 +1,4 @@
-package com.josecalvo.infraestructure.web.plugin
+package com.josecalvo.infrastructure.web.plugin
 
 import io.ktor.server.application.*
 import io.ktor.server.response.*
