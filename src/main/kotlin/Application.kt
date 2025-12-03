@@ -1,5 +1,7 @@
 package com.josecalvo
 
+import com.josecalvo.com.musicapi.infraestructure.web.plugin.configureRouting
+import com.josecalvo.com.musicapi.infraestructure.web.plugin.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -11,7 +13,5 @@ fun main() {
 
 fun Application.module() {
     configureSerialization()
-    configureDatabases()
-    configureMonitoring()
     configureRouting()
 }
