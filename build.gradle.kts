@@ -6,6 +6,8 @@ plugins {
 
 group = "com.josecalvo"
 version = "0.0.1"
+val exposed_version = "0.56.0"
+
 
 application {
     mainClass = "com.josecalvo.ApplicationKt"
@@ -26,4 +28,10 @@ dependencies {
     implementation(libs.logback.classic)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+
+    implementation("com.zaxxer:HikariCP:7.0.2")
+
+    implementation("org.jetbrains.exposed:exposed-java-time:${exposed_version}")
+    implementation("org.jetbrains.exposed:exposed-core:${exposed_version}")
+    implementation("org.jetbrains.exposed:exposed-jdbc:${exposed_version}")
 }
