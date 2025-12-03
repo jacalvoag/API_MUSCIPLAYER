@@ -21,6 +21,7 @@ fun Application.module() {
         maxPoolSize = 10
     )
 
+    configureRouting()
     configureSerialization()
     configureRouting()
 }
